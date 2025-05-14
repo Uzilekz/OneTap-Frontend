@@ -1,0 +1,9 @@
+/* Paleta de color */
+:root {
+    --white: #ffffff;
+    --light-gray: #f2f1f0;
+    --dark-blue: #0d1e26;
+    --dark-gray: #061014;
+    --black: #000000;
+    --red: #ce0037;
+}

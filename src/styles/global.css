@@ -1,0 +1,27 @@
+/* Fuente personalizada para títulos */
+@font-face {
+    font-family: "Blippo Black";
+    src: url("../assets/fonts/blippo-black.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Fuente de títulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Blippo Black", sans-serif;
+}
+
+/* Fuente de textos */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+::selection {
+    background: var(--red);
+    color: #fff; /* Puedes ajustar el color del texto seleccionado si lo deseas */
+}

@@ -1,0 +1,208 @@
+/* Estilos para el header */
+.header {
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-blue);
+    padding: 1rem;
+}
+
+/* Los contenedores de navegación ocuparán el mismo ancho */
+.nav-left,
+.nav-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Alinear los contenidos de cada nav: a la derecha para la izquierda y a la izquierda para la derecha */
+.nav-left {
+    justify-content: flex-end;
+}
+
+.nav-right {
+    justify-content: flex-start;
+}
+
+/* Listas de navegación sin estilo */
+.nav-left ul,
+.nav-right ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    gap: 10px; /* espacio entre botones */
+}
+
+/* Estilos para los items de lista */
+.nav-left li,
+.nav-right li {
+    margin: 0 0.5rem;
+}
+
+/* Estilo base para los links de navegación */
+.nav-left a,
+.nav-right a {
+    display: inline-block; /* Asegura que el ancho se aplique correctamente */
+    width: 120px; /* Puedes ajustar este valor */
+    text-align: center; /* Centra el texto */
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 0; /* Solo vertical para evitar sumar al ancho */
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    transition: all 0.5s ease 0s;
+    position: relative;
+    overflow: hidden; /* Oculta contenido que se desborde */
+}
+
+/* Pseudo-elemento oculto por defecto */
+.nav-left a:before,
+.nav-right a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100px;
+    width: 80px;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(245, 245, 245, 0.8),
+        transparent
+    );
+    transform: skewX(35deg);
+    opacity: 0; /* Oculto por defecto */
+    transition: left 0.5s ease 0s, opacity 0.5s ease 0s;
+}
+
+/* Al pasar el mouse, se mueve y se hace visible */
+.nav-left a:hover:before,
+.nav-right a:hover:before {
+    left: 100%;
+    opacity: 1;
+}
+
+/* Para que, cuando el enlace esté activo, el pseudo-elemento permanezca visible */
+.nav-left a.active:before,
+.nav-right a.active:before {
+    left: 100%;
+    opacity: 1;
+    transition: left 0.5s ease, opacity 0.5s ease;
+}
+
+/* Efecto hover para resaltar el link con fondo, cambio de color y animación */
+.nav-left a:hover,
+.nav-right a:hover {
+    background-color: var(--red);
+    color: var(--dark-blue);
+    transform: translateY(-2px);
+    filter: brightness(0.9);
+}
+
+/* Estilos para los links activos */
+.active {
+    background-color: var(--red);
+    transform: translateY(-2px);
+    filter: brightness(0.9);
+    border-radius: 8px; /* Redondea las esquinas del logo */
+}
+
+.nav-left a.active,
+.nav-right a.active {
+    background-color: var(--red);
+    color: rgb(255, 214, 80); /* El texto se mostrará en color dorado */
+    transform: translateY(-2px);
+    filter: brightness(0.9);
+}
+
+/* Estilos para el logo y su contenedor */
+.logo {
+    position: relative;
+    margin: 0 2rem;
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: transform 0.3s ease;
+}
+
+/* Al pasar el mouse por el logo, se agranda */
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos para las imágenes dentro del logo */
+.logo img {
+    max-height: 60px; /* Ajusta según necesites */
+    transition: opacity 0.3s ease;
+    display: block;
+    border-radius: 8px; /* Redondea las esquinas del logo */
+}
+
+/* Posicionamiento para apilar las imágenes (logo normal y hover) */
+.logo-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+/* Efecto hover para alternar la opacidad de las imágenes del logo */
+.logo:hover .logo-hover {
+    opacity: 1;
+}
+
+.logo:hover .logo-default {
+    opacity: 0;
+}
+
+/* Estilos para el logo en estado activo (cuando la ruta es "/") */
+.logo.active .logo-hover {
+    opacity: 1;
+}
+
+.logo.active .logo-default {
+    opacity: 0;
+}
+
+/* Asegúrate de que el li que contiene "Empresa" tenga posición relativa */
+.empresa-dropdown {
+    position: relative;
+}
+
+/* Estilos para el dropdown centrado */
+.dropdown-menu {
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--dark-blue);
+    padding: 0.5rem 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    min-width: 120px;
+}
+
+/* Lista interna y estilado de los enlaces del menú */
+.dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--white);
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--red);
+    color: var(--dark-blue);
+}

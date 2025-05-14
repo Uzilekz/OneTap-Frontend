@@ -54,7 +54,7 @@ const Header = () => {
                         </li>
                         <li className="empresa-dropdown" ref={dropdownRef}>
                             <a
-                                href="#"
+                                href="/"
                                 onClick={toggleEmpresaDropdown}
                                 className={
                                     showEmpresaDropdown || isEmpresaActive

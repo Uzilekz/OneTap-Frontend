@@ -1,9 +1,22 @@
-/* Estilos para el header */
+/* El header se mantiene fixed para quedarnos siempre arriba */
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--dark-blue);
+    padding: 1rem 0;
+    z-index: 1000;
+}
+
+/* Contenedor interno centrado y con ancho máximo */
+.header-inner {
+    max-width: 1200px; /* Ajusta el ancho máximo según prefieras */
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    background-color: var(--dark-blue);
-    padding: 1rem;
+    justify-content: space-between;
+    padding: 0 1rem; /* Espaciado lateral */
 }
 
 /* Los contenedores de navegación ocuparán el mismo ancho */

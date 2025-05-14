@@ -47,6 +47,8 @@
     cursor: default;
     /* Aparece al cargar y luego inicia un pulso de "fuego" */
     animation: fadeInScale 1s ease-out forwards;
+    /* Sombreados para darle efecto de profundidad */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5), 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes fadeInScale {

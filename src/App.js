@@ -4,6 +4,7 @@ import "./styles/global.css";
 import "./styles/variables.css";
 import Header from "./components/layout/Header.jsx";
 import Hero from "./pages/components/Hero.jsx";
+import SponsorsCarousel from "./components/SponsorsCarousel.jsx";
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
             <Header />
             <main>
                 <Hero />
+                <SponsorsCarousel />
             </main>
         </>
     );

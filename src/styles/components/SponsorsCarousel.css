@@ -1,0 +1,52 @@
+/* Contenedor principal del carrusel: ocupa todo el ancho del viewport y oculta el scroll */
+.sponsors-carousel {
+    position: relative;
+    width: 100vw;
+    margin: 2rem 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* (Opcional) Si usas una ventana de visualización: */
+.carousel-window {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* La pista duplica el contenido y se anima de forma continua.
+   Aquí usamos gap para separar los ítems de forma uniforme */
+.carousel-track {
+    display: flex;
+    gap: 5rem; /* Espacio entre sponsors */
+    width: 300%; /* Debe contener dos sets idénticos */
+    animation: scroll 40s linear infinite;
+}
+
+/* Cada ítem se adapta a su contenido sin márgenes individuales */
+.carousel-item {
+    flex: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Las imágenes se muestran con un tamaño máximo previamente definido */
+.carousel-item img {
+    max-height: 70px; /* Ajusta este valor según tus necesidades */
+    height: auto;
+    object-fit: contain;
+}
+
+/* Keyframes de la animación:
+   Se traslada exactamente la mitad del ancho de la pista para que, al reiniciarse la animación,
+   el contenido se repita de forma continua sin espacios en blanco */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}

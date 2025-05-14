@@ -5,6 +5,18 @@
     overflow: hidden;
 }
 
+/* Pseudo-elemento para sombreado interior: comienza puro negro en la parte inferior y se va transparentando hacia arriba */
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; /* Ajusta la altura según prefieras */
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+    pointer-events: none;
+}
+
 .hero-video {
     position: absolute;
     top: 50%;

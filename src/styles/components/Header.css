@@ -6,8 +6,9 @@
     width: 100%;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombreado debajo del header */
 }
 
 /* Contenedor interno centrado y con ancho máximo */
@@ -44,13 +45,12 @@
     display: flex;
     justify-content: center;
     padding: 0;
-    gap: 10px; /* espacio entre botones */
 }
 
 /* Estilos para los items de lista */
 .nav-left li,
 .nav-right li {
-    margin: 0 0.5rem;
+    margin: 0 0.8rem;
 }
 
 /* Estilo base para los links de navegación */
@@ -186,22 +186,34 @@
 /* Estilos para el dropdown centrado */
 .dropdown-menu {
     position: absolute;
-    top: 130%;
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--dark-blue);
-    padding: 0.5rem 0;
+    background: rgb(6, 16, 20, 0.7); /* Fondo semitransparente oscuro */
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 10;
     min-width: 120px;
 }
 
+.dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent rgba(6, 16, 20, 0.7);
+}
+
 /* Lista interna y estilado de los enlaces del menú */
 .dropdown-menu ul {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 10px 0 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .dropdown-menu li {
@@ -219,4 +231,18 @@
 .dropdown-menu li a:hover {
     background-color: var(--red);
     color: var(--dark-blue);
+}
+
+/* Asegura que los enlaces con clase active mantengan el texto dorado incluso al hover */
+.dropdown-menu li a.active,
+.dropdown-menu li a.active:hover {
+    background-color: var(--red);
+    color: rgb(255, 214, 80);
+}
+
+/* Anula la transformación para los enlaces del dropdown */
+.dropdown-menu li a:hover,
+.dropdown-menu li a.active,
+.dropdown-menu li a.active:hover {
+    transform: none;
 }

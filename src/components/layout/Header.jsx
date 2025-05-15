@@ -44,7 +44,7 @@ const Header = () => {
                     <ul>
                         <li>
                             <NavLink
-                                to="/sobre-nosotros"
+                                to="/nosotros"
                                 className={({ isActive }) =>
                                     isActive ? "active" : ""
                                 }
@@ -119,7 +119,7 @@ const Header = () => {
                         </li>
                         <li>
                             <NavLink
-                                to="/clips"
+                                to="/contenido"
                                 className={({ isActive }) =>
                                     isActive ? "active" : ""
                                 }

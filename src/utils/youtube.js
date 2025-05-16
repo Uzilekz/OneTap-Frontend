@@ -4,11 +4,18 @@
  * Asegúrate de tener configurada la variable de entorno REACT_APP_YOUTUBE_API_KEY.
  */
 export const fetchVideoDetails = async (videoId) => {
-    const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY; // Coloca tu API Key en un archivo .env
-    const apiUrl = `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${API_KEY}&part=snippet,contentDetails`;
+    if (!videoId) return null;
+
     try {
-        const response = await fetch(apiUrl);
+        // Cambia esta URL por la URL de tu backend desplegado
+        const response = await fetch(
+            `https://onetap-backend-p0l1.onrender.com/api/youtubeVideo?id=${videoId}`
+        );
+
+        if (!response.ok) throw new Error("Error fetching video details");
+
         const data = await response.json();
+
         if (data.items && data.items.length > 0) {
             const { snippet, contentDetails } = data.items[0];
             return {
@@ -17,6 +24,7 @@ export const fetchVideoDetails = async (videoId) => {
                 duration: `⏰ ${convertDuration(contentDetails.duration)}`,
             };
         }
+
         return null;
     } catch (error) {
         console.error("Error fetching video details:", error);

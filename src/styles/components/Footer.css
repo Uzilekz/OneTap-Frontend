@@ -1,0 +1,67 @@
+.footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Logo del equipo sin animación ni cursor; border-radius para redondear las esquinas */
+.logo-section .logo {
+    width: 70px; /* Tamaño reducido */
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Al hacer hover sobre el link, se anima el logo */
+.logo-link:hover .logo {
+    transform: scale(1.1);
+}
+
+/* Sección de botones sociales */
+.links-section {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Botones cuadrados para íconos de redes */
+.social-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--red); /* O el color que estés utilizando */
+    border-radius: 4px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Al hacer hover, se escala el botón */
+.social-button:hover {
+    transform: scale(1.2);
+}
+
+/* Íconos en color var(--black) por defecto */
+.social-button svg {
+    color: var(--black);
+    transition: color 0.3s ease;
+}
+
+/* Al hacer hover, el ícono cambia a var(--white) */
+.social-button:hover svg {
+}
+
+/* Copyright */
+footer p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: var(--light-gray);
+}

@@ -41,8 +41,9 @@ const Highlights = () => {
                     const details = await fetchVideoDetails(videoId);
                     return {
                         ...clip,
-                        alt: details?.title || clip.alt, // ahora usa title del backend
-                        uploaded: details?.publishedAt || clip.uploaded, // ahora usa publishedAt del backend
+                        alt: details?.title || clip.alt,
+                        // Se elimina "duration" ya que no se mostrará
+                        uploaded: details?.publishedAt || clip.uploaded,
                     };
                 })
             );

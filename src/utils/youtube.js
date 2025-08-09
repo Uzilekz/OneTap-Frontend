@@ -21,7 +21,7 @@ export const fetchVideoDetails = async (videoId) => {
             return {
                 title: snippet.title,
                 publishedAt: formatPublishedDate(snippet.publishedAt),
-                duration: `⏰ ${convertDuration(contentDetails.duration)}`,
+                duration: `${convertDuration(contentDetails.duration)}`,
             };
         }
 

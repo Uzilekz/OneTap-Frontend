@@ -3,8 +3,8 @@
     background-color: var(--dark-gray);
     color: #fff;
     text-align: center;
-    padding-bottom: 10rem;
-    padding-top: 10rem;
+    padding-bottom: 15rem;
+    padding-top: 15rem;
     position: relative;
 }
 
@@ -128,7 +128,7 @@
     position: absolute;
     bottom: 1rem;
     left: 1rem;
-    color: #fff;
+    color: #d1d1d1;
     max-width: 90%; /* Limita el ancho del contenedor */
     display: inline-block;
     width: clamp(260px, 25vw, 220px);

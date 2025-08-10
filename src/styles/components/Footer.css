@@ -14,7 +14,7 @@
 
 /* Logo del equipo sin animación ni cursor; border-radius para redondear las esquinas */
 .logo-section .logo {
-    width: 70px; /* Tamaño reducido */
+    width: 55px;
     height: auto;
     border-radius: 8px;
     transition: transform 0.3s ease;
@@ -55,13 +55,10 @@
     transition: color 0.3s ease;
 }
 
-/* Al hacer hover, el ícono cambia a var(--white) */
-.social-button:hover svg {
-}
-
 /* Copyright */
 footer p {
     font-size: 0.9rem;
     margin: 0;
     color: var(--light-gray);
+    font-weight: bold;
 }
